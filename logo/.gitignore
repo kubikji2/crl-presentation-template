@@ -1,0 +1,4 @@
+# allow versioning anything in this file
+!*.pdf
+!*.png
+*.xcf
