@@ -1,0 +1,114 @@
+% File name: slides.tex
+% Date:      2015/08/24 09:45
+% Author:    Firstname Surname
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Motivation}
+   \textctubf{Text}
+   \begin{itemize} \justifying %justifying for nicely justify the text
+      \item Here should go the motivation of the thesis
+      \item In case there are more items to list:
+	   \begin{itemize} \justifying
+         \item subitem1
+	      \begin{itemize}
+            \item duh
+         \end{itemize}
+	      \item subitem2
+	   \end{itemize}
+   \end{itemize}
+   
+   \begin{itemize}
+      \item You can also put some references, especially if you submit paper to IROS
+
+   \begin{itemize}
+      \item You can use a simple line which save space, e.g., 
+   \end{itemize}
+\hspace*{0.5em}
+\parbox{\textwidth}{\tiny {\color{ctu4blue}Faigl J., Hollinger G.}: \textit{Unifying Multi-Goal Path Planning for Autonomous Data Collection}, {\color{ctu4blue}IROS}, 2014, 2937--2942.}
+   \begin{itemize}
+      \item Or you can use bibliography entry like 
+   \end{itemize}
+   {\scriptsize
+      \begin{thebibliography}{1c}
+	 \bibitem[1b]{1b}
+	    {Faigl J., Hollinger G.}
+	    \newblock{\em Unifying Multi-Goal Path Planning for Autonomous Data Collection}
+	    \newblock{IROS\color{black}, 2014, 2937--2942.}
+      \end{thebibliography}
+   }
+   \end{itemize}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Problem Statement}
+   \textbf{\color{ctu4blue}Columns example}
+   \begin{itemize}\justifying
+      \item Multi column environment can be combined with a single column as well  
+   \end{itemize}
+   \begin{columns}[t, onlytextwidth]
+      \begin{column}[T]{0.70\textwidth}
+	 \begin{itemize}\justifying
+	    \item text
+	    \item more text
+	 \end{itemize}
+    \begin{enumerate}\justifying
+      \item text
+      \begin{enumerate}\justifying
+         \item text
+         \begin{enumerate}\justifying
+            \item text
+            \item more text
+         \end{enumerate}
+         \item more text
+      \end{enumerate}
+      \item more text
+   \end{enumerate}
+      \end{column}
+      \begin{column}[T]{0.28\textwidth}
+	 \includegraphics[width=\columnwidth]{fig/logo-cvut-en-background}
+      \end{column}
+   \end{columns}
+
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Embedded videos - direct embedding}
+   \begin{itemize} \justifying %justifying for nicely justify the text
+      \item For an embedded video to play you need:
+	 \begin{itemize}
+	    \item video file in a directory \texttt{video}
+	    \item image file with the same resolution as video (screenshot) in a directory \texttt{fig}
+	    \item Okular pdf viewer for the presentation
+	 \end{itemize}
+   \end{itemize}
+
+   %including video to play in infinite loop and start immediately fter the slide is opened
+   \begin{center}
+      \movie[width=0.4\columnwidth, poster, autostart, loop]{
+	 \includegraphics[width=0.4\columnwidth]{fig/gait}
+      }{videos/gait_sm.mp4}%
+   \end{center}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Embedded videos - hyperlink}
+   \begin{itemize} \justifying %justifying for nicely justify the text
+      \item \href{run:./videos/gait_sm.mp4}{Click for video}
+   \end{itemize}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Math font testing}
+   \begin{itemize} \justifying %justifying for nicely justify the text
+     \item {\bf equation} is $x \in \mathbb{R}$
+      \begin{equation}
+        \dot{\mathbf{x}} = \mathbf{A}x + \mathbf{B}u
+      \end{equation}
+   \end{itemize}
+\end{frame}
+
