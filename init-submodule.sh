@@ -9,6 +9,7 @@ script_dirpath=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pw
 # path to directory where the new files are placed
 target_path=$script_dirpath"/../"
 # get the name of the file where this script is located
+# '-> based on: https://www.cyberciti.biz/faq/bash-get-basename-of-filename-or-directory-name/
 submodule_dirname=${script_dirpath##*/}
 # name of the main style file
 style_filename="beamerthemeCTUstyle.sty"
@@ -18,6 +19,7 @@ path_filename="ctu-paths.tex"
 # copy the main style file into the parent directory
 cp $script_dirpath"/"$style_filename $target_path$style_filename
 # remove '{' in the main style file
+# '-> based on: https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
 sed -i 's/{//g' $target_path$style_filename
 # replace 'use' by 'input{beamer' in the main style file
 sed -i 's/use/input{beamer/g' $target_path$style_filename
