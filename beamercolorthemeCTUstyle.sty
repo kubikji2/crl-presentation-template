@@ -1,0 +1,86 @@
+% Created by Jiri Kubik, 2022
+% '-> based on previous template by: Petr Cizek, 2018
+% '-> template-files structure is based on: 
+%     https://www.lucidchart.com/techblog/2016/12/07/how-to-make-a-presentation-in-latex/
+
+% This file:
+% "Defines the colors used in various parts of the theme,
+% e.g.,the color for frame titles or the background color" and the font styles
+
+% define CTU blue
+\RequirePackage{xcolor}
+\definecolor{ctu4blue}{rgb}{0.0781, 0.4688, 0.7773} %#1478c
+
+% styles and colors related to the first page
+% reseting typset using \normalfont
+% '-> see: https://latexref.xyz/Font-styles.html
+\setbeamerfont{author}{series=\normalfont, size=\normalsize}
+\setbeamercolor*{author}{fg=black}
+\setbeamerfont{title}{series=\bf, size=\Large}
+\setbeamercolor*{title}{fg=ctu4blue}
+\setbeamerfont{institute}{size=\small}
+\setbeamercolor*{institute}{fg=black}
+
+% styles related to the headline
+\setbeamercolor{headline} {fg=white}
+\setbeamerfont{headlinetitle} {series=\bf, size={\fontsize{11.5pt}{14pt}}}
+\setbeamerfont{headlineauthor} {series=\normalfont, size=\footnotesize}
+\setbeamerfont{headlineframetitle} {series=\bf, size=\Large}
+
+% styles related to the footline
+% '-> set footline color to CTUblue
+\setbeamercolor{footline} {fg=ctu4blue}
+% '-> set footline text font
+\setbeamerfont{footlinetext} {series=\normalfont, size=\scriptsize}
+% '-> set slide counter font
+\setbeamerfont{footlineslidecnt} {series=\normalfont, size=\scriptsize}
+
+% styles related to the frame title
+\setbeamercolor{frametitle}{fg=ctu4blue}
+\setbeamerfont{frametitle}{series=\bf}
+
+%% itemize settings
+% '-> original triangular bullet-symbol
+% \setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+% '-> set all three item-levels to the respective symbols and colors
+%     '-> highest level
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{itemize item}{fg=ctu4blue}
+%     '-> middle level
+\setbeamertemplate{itemize subitem}[square]
+\setbeamercolor{itemize subitem}{fg=ctu4blue}
+%     '-> lowest level
+\setbeamertemplate{itemize subsubitem}[triangle]
+\setbeamercolor{itemize subsubitem}{fg=ctu4blue}
+% '-> set subitem level size
+\setbeamertemplate{itemize/enumerate subbody begin}{\footnotesize}
+
+% '-> set enumerate symbols color
+\setbeamercolor{enumerate item}{fg=ctu4blue}
+\setbeamertemplate{enumerate item}{\quad\small\insertenumlabel.}
+\setbeamercolor{enumerate subitem}{fg=ctu4blue}
+\setbeamertemplate{enumerate subitem}{\alph{enumii}.}
+\setbeamercolor{enumerate subsubitem}{fg=ctu4blue}
+\setbeamertemplate{enumerate subsubitem}{\roman{enumiii}.}
+
+% '-> set sections marks in table of content
+%     NOTE: ok, I've never use that
+\setbeamertemplate{sections/subsections in toc}[square]
+
+% '-> set enumerate margins
+\setbeamersize{text margin left=15pt,text margin right=15pt} 
+\setlength{\leftmargini}{12pt}
+%\addtolength{\leftmargini}{\labelsep}
+\setlength{\leftmarginii}{12pt}
+%\addtolength{\leftmarginii}{\labelsep}
+\setlength{\leftmarginiii}{12pt}
+%\addtolength{\leftmarginiii}{\labelsep}
+
+%Set Technika font as the main font
+\RequirePackage{fontspec}
+\usefonttheme[onlymath]{serif} %for nice equations
+\setsansfont[
+  BoldFont={Technika-Regular},
+  ItalicFont={Technika-LightItalic},
+  BoldItalicFont={Technika-Italic}
+]{Technika-Light}
