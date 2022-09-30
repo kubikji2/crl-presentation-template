@@ -1,0 +1,97 @@
+% Created by Jiri Kubik, 2022
+% '-> based on previous template by: Petr Cizek, 2018
+% '-> template-files structure is based on: 
+%     https://www.lucidchart.com/techblog/2016/12/07/how-to-make-a-presentation-in-latex/
+
+% This file:
+% "Defines the appearance of any items that make up the slides central content,
+% e.g., lists or the title on the title page"
+
+% adding commands used
+\input{ctu-commands.tex}
+
+% Requirement
+\RequirePackage{tikz}
+
+%%%%%%%%%%%%%%
+% TITLE PAGE %
+%%%%%%%%%%%%%%
+
+% LOGOS:
+% define paths
+\newcommand{\CTULogoPath}{logo/ctu-en}
+%\newcommand{\CTULogoNegPath}{logo/ctu-en-complementary-negative.pdf}
+\newcommand{\AICLogoBlackPath}{logo/aic-black}
+\newcommand{\AICLogoWhitekPath}{logo/aic-white}
+\newcommand{\AICLogoPrimaryPath}{logo/aic-primary}
+\newcommand{\AICLogoRainbowPath}{logo/aic-rainbow}
+
+% Logos used in the presentation
+% - NOTE: make sure you follow CTU graphical identity manual (CS-only) at: https://www.cvut.cz/logo-a-graficky-manual     
+% '-> path to CTU logo used on the title page
+\newcommand{\deployedCTULogoTitlePagePath}{\CTULogoPath}
+% '-> path to AIC logo usef on the title page
+\newcommand{\deployedAICLogoTitlePagePath}{\AICLogoRainbowPath}
+% '-> path to CTU logo used in the top line on regular slides
+%\newcommand{\deployedCTULogoHeadLinePath}{\CTULogoNegPath}
+
+% NO FUCKING IDEA WHY THIS IS HERE
+%\pgfdeclareimage[height=1cm]{ctu_header}{\deployedCTULogoHeadLinePath}
+% this is never used, but too scared to delete
+%\pgfdeclareimage[height=0.6cm]{aic}{\AICLogoPath}
+
+% NO IDEA section
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0em}
+
+\defbeamertemplate*{title page}{ctu}[1][]
+{
+  % logo line
+  % '-> move everything a bit up
+  \vskip -40pt
+  \includegraphics[height=40pt]{\deployedCTULogoTitlePagePath}
+  \hfill
+  \includegraphics[height=40pt]{\deployedAICLogoTitlePagePath}
+  
+  % NOTE: add some spacing if needed
+  \vspace{20pt}
+
+  % text block
+  \begin{centering}
+    % title related
+    % '-> set color font
+    \usebeamercolor[fg]{title}%
+    % '-> add text in right font
+    \usebeamerfont{title}{\inserttitle}%
+    % add small space
+    \vskip0.7cm%
+    % author related
+    % '-> set color font
+    \usebeamercolor[fg]{author}%
+    % '-> add text in right font
+    \usebeamerfont{author}{\insertauthor}%
+    % add small spaces
+    \vskip0.7cm%
+    % institude related
+    % '-> set color font
+    \usebeamercolor[fg]{institute}%
+    % '-> add text in right font
+    \usebeamerfont{institute}{\insertinstitute}
+    \vskip0.1cm
+  \end{centering}
+}
+
+%%%%%%%%%%%%%%%
+% FRAME TITLE %
+%%%%%%%%%%%%%%%
+\defbeamertemplate*{frametitle}{texsx}[1][]
+{   
+  \ifx\compact\undefined
+    \vspace{-0.4cm}
+    \begin{center}
+        \usebeamerfont{frametitle}{\insertframetitle}
+    \end{center}
+    \vskip-0.8cm
+  \fi
+}

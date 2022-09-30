@@ -1,0 +1,102 @@
+% Created by Jiri Kubik, 2022
+% '-> based on previous template by: Petr Cizek, 2018
+% '-> template-files structure is based on: 
+%     https://www.lucidchart.com/techblog/2016/12/07/how-to-make-a-presentation-in-latex/
+
+% This file:
+% "Defines the appearance of the chrome of the slide, e.g., the title and footer of each slide"
+
+% remove the navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%
+% HEADLINE %
+%%%%%%%%%%%%
+
+% prerequisities
+\newcommand{\CTULogoNegPath}{logo/ctu-en-complementary-negative}
+\newcommand{\deployedCTULogoHeadLinePath}{\CTULogoNegPath}
+\pgfdeclareimage[height=1cm]{ctu_header}{\deployedCTULogoHeadLinePath}
+
+\defbeamertemplate*{headline}{ctu}
+{
+  \begin{tikzpicture}
+    % create header canvas (bounding box)
+    \useasboundingbox (0,0) rectangle(\the\paperwidth, 1.1);
+    % do something only on non-title pages:
+    % '-> NOTE: \relax stops expanding condition
+    %           see :https://tex.stackexchange.com/questions/96501/what-does-relax-do
+    \ifnum\thepage>1\relax%
+      % ... fill the rectangle by CTU4blue
+      \fill[color=ctu4blue] (0,0) rectangle (\the\paperwidth,1.1);
+      % ... add logo node to the right
+      \node[anchor=east] at (\the\paperwidth, 0.55) {\pgfuseimage{ctu_header}};
+      % ... add text node to the left
+      \node[anchor=west] at (0.25, 0.5) {
+        % ... adding text-box to the node
+        \parbox[t]{0.75\paperwidth}{
+          \ifx\compact\undefined
+            % ... add title
+            \usebeamerfont{headlinetitle}{\inserttitle}
+            % ... add vertical space filling the space
+            %     '-> alternatively use %\\[2pt]
+            \vfill{}
+            % ... add author
+            \usebeamerfont{headlineauthor}{\insertshortauthor}
+          \else
+            \usebeamerfont{headlineframetitle}{\insertframetitle}
+          \fi
+        }
+      };
+    \fi
+  \end{tikzpicture}
+}
+
+%%%%%%%%%%%%
+% FOOTLINE %
+%%%%%%%%%%%%
+
+\newcommand{\footlineleft}{~}
+\newcommand{\footlineright}{~}
+
+\defbeamertemplate*{footline}{}
+{
+  % define footline space
+  \newcommand{\footlinespace}{2ex}
+  % first leave vertical mode (used in slide body) and enter horizontal mode
+  % '-> see: https://tex.stackexchange.com/questions/22852/function-and-usage-of-leavevmode
+  \leavevmode%
+  % ... then create horizontal box ...
+  \hbox{%
+    % do something only on non-title pages: 
+    \ifnum\thepage>1\relax%
+      \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{}%
+        % segment \FootLineLeft
+        % '-> adding space from the left edge
+        \hspace{\footlinespace}
+        % '-> setting font 
+        \usebeamerfont{footlinetext}
+        % '-> including foot line text
+        \footlineleft
+        %\hspace{\footlinespace}
+        % adding space between left foot line and right foot line text
+        \hfill{}
+        % segment \FootLineRight
+        % '-> setting font 
+        \usebeamerfont{footlinetext}
+        % '-> including foot line text
+        \footlineright
+        % '-> adding space between right footnote text and slide counter
+        \hspace{\footlinespace}
+        % segment slide counter
+        % '-> setting font 
+        \usebeamerfont{footlineslidecnt}
+        % '-> include slide counter
+        {\insertframenumber{} / \inserttotalframenumber{}}
+        % '-> add space between slide counter and the right edge
+        \hspace{\footlinespace}
+      \end{beamercolorbox}%
+    \fi
+  }%
+  \vskip7pt%
+}

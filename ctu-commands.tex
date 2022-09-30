@@ -1,0 +1,48 @@
+% Created by Jiri Kubik, 2022
+% '-> based on previous template by: Petr Cizek, 2018
+
+% This file:
+% Defines commands for highligting the text in presentations and abbrevations
+% USAGE: 
+% do not input if you are already using the CTU-style sty file
+
+%%%%%%%%%%%%%%%%
+% ABBREVATIONS %
+%%%%%%%%%%%%%%%%
+% Institution and laboratories abbrevations
+\newcommand{\ComRob}{Computational Robotics Laboratory}
+\newcommand{\AIC}{Artificial Intelligence Center}
+\newcommand{\CRAS}{Center for Robotics and Autonomous Systems}
+\newcommand{\FEE}{Faculty of Electrical Engineering}
+\newcommand{\CTU}{Czech Technical University in Prague}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% HIGHLIGHTING COMMANDS %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% '-> commands are free to use for higlighting the text within the presentation body
+
+% required by color defintion
+\RequirePackage{xcolor}
+% (re)define color
+\definecolor{ctu4blue}{rgb}{0.0781, 0.4688, 0.7773} %#1478c
+% add new commands for CTU blue coloured-text
+\newcommand{\textctubf}[1]{{\color{ctu4blue}\bf #1}}
+\newcommand{\textctunf}[1]{{\color{ctu4blue}\normalfont #1}}
+\newcommand{\textctu}[1]{{\color{ctu4blue}\normalfont #1}}
+\newcommand{\emphctu}[1]{\emph{\color{ctu4blue} #1}}
+\newcommand{\textctuit}[1]{{\color{ctu4blue}\it #1}}
+% add new command for book citation
+\newcommand{\bibcit}[4]{\parbox{\textwidth}{\tiny \textctubf{#1}: \textit{#2}, \textctunf{#3}, #4}}
+% add new shole citation
+% '-> TODO: improve big citation visual
+\newcommand{\bibligraphycitation}[4]{%
+  \scriptsize%
+  \begin{thebibliography}{1c}%
+    \bibitem[1b]{1b}
+    {\textctubf{#1}}%
+    \newblock{\it #2}%
+    \newblock{\textctu{#3}, \color{black} #4.}%
+  \end{thebibliography}
+}
+
+
