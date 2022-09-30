@@ -8,7 +8,10 @@
 % e.g., lists or the title on the title page"
 
 % adding commands used
-\input{ctu-commands.tex}
+% '-> indlude paths
+\input{ctu-paths.tex}
+% '-> include highlighting commands
+\input{\templatepath/ctu-commands.tex}
 
 % Requirement
 \RequirePackage{tikz}
@@ -19,12 +22,12 @@
 
 % LOGOS:
 % define paths
-\newcommand{\CTULogoPath}{logo/ctu-en}
-%\newcommand{\CTULogoNegPath}{logo/ctu-en-complementary-negative.pdf}
-\newcommand{\AICLogoBlackPath}{logo/aic-black}
-\newcommand{\AICLogoWhitekPath}{logo/aic-white}
-\newcommand{\AICLogoPrimaryPath}{logo/aic-primary}
-\newcommand{\AICLogoRainbowPath}{logo/aic-rainbow}
+\newcommand{\CTULogoPath}{\logopath/ctu-en}
+%\newcommand{\CTULogoNegPath}{\logopath/ctu-en-complementary-negative.pdf}
+\newcommand{\AICLogoBlackPath}{\logopath/aic-black}
+\newcommand{\AICLogoWhitekPath}{\logopath/aic-white}
+\newcommand{\AICLogoPrimaryPath}{\logopath/aic-primary}
+\newcommand{\AICLogoRainbowPath}{\logopath/aic-rainbow}
 
 % Logos used in the presentation
 % - NOTE: make sure you follow CTU graphical identity manual (CS-only) at: https://www.cvut.cz/logo-a-graficky-manual     
