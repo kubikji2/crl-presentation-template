@@ -64,3 +64,44 @@
    \end{columns}
 
 \end{frame}
+
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Embedded videos - direct embedding}
+   \begin{itemize} \justifying %justifying for nicely justify the text
+      \item For an embedded video to play you need:
+	 \begin{itemize}
+	    \item video file in a directory \texttt{video}
+	    \item image file with the same resolution as video (screenshot) in a directory \texttt{fig}
+	    \item Okular pdf viewer for the presentation
+	 \end{itemize}
+   \end{itemize}
+
+   %including video to play in infinite loop and start immediately fter the slide is opened
+   \begin{center}
+      \movie[width=0.4\columnwidth, poster, autostart, loop]{
+	 \includegraphics[width=0.4\columnwidth]{fig/gait}
+      }{videos/gait_sm.mp4}%
+   \end{center}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Embedded videos - hyperlink}
+   \begin{itemize} \justifying %justifying for nicely justify the text
+      \item \href{run:./videos/gait_sm.mp4}{Click for video}
+   \end{itemize}
+\end{frame}
+
+% - frame -----------------------------------------------------------------
+\begin{frame}
+   \frametitle{Math font testing}
+   \begin{itemize} \justifying %justifying for nicely justify the text
+     \item {\bf equation} is $x \in \mathbb{R}$
+      \begin{equation}
+        \dot{\mathbf{x}} = \mathbf{A}x + \mathbf{B}u
+      \end{equation}
+   \end{itemize}
+\end{frame}
+
