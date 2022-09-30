@@ -1,6 +1,5 @@
-% File name: main.tex
-% Date:      01/09/2018, 01/09/2022
-% Author:    Petr Cizek, Jiri Kubik
+% Created by Jiri Kubik, 2022
+% '-> based on previous template by: Petr Cizek, 2018
 
 \documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
@@ -20,16 +19,13 @@
 \usepackage{bibentry}
 \nobibliography*
 
+% Use template should be called before defining anything else
+\usetheme{CTUstyle}
+
 \author{Author names}
 \title{Presentation title}
 \date{\today}
-
-\newcommand{\ComRob}{Computational Robotics Laboratory}
-\newcommand{\AIC}{Artificial Intelligence Center}
-\newcommand{\CRAS}{Center for Robotics and Autonomous Systems}
-\newcommand{\FEE}{Faculty of Electrical Engineering}
-\newcommand{\CTU}{Czech Technical University in Prague}
-\newcommand{\Institute}{%
+\institute{%
 \vspace{0.25em}
    {\bf \ComRob}\\ 
 \vspace{0.25em}
@@ -37,33 +33,16 @@
 \vspace{0.25em}
    {\bf \CRAS}\\ 
 \vspace{0.25em}
-{\FEE}\\
+   {\FEE}\\
 \vspace{0.25em}
-{\CTU}
+   {\CTU}
 }
-
-% add new commands for CTU blue coloured-text
-\newcommand{\textctubf}[1]{{\color{ctu4blue}\bf #1}}
-\newcommand{\textctunf}[1]{{\color{ctu4blue}\normalfont #1}}
-\newcommand{\emphctu}[1]{\emph{\color{ctu4blue} #1}}
-\newcommand{\textctuit}[1]{{\color{ctu4blue}\it #1}}
-
-% add new command for book citation
-\newcommand{\bibcite}[3]{\parbox{\textwidth}{\tiny \textctubf{#1}: \textctuit{#2}, #3}}
-
-% set meaning for left and right footnotes
-\newcommand{\FootLineLeft}{\ComRob}
-\newcommand{\FootLineRight}{\texttt{https://comrob.fel.cvut.cz}}
-
-\newcommand{\disable}[1]{}
-
-\usetheme{CTUstyle}
 
 \begin{document}
 
-\begin{frame}
-\titlepage
-\end{frame}
+    \begin{frame}
+        \titlepage
+    \end{frame}
 
-\input{slides}
+    \input{slides}
 \end{document}
