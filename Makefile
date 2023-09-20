@@ -1,5 +1,5 @@
 TARGET = main
-LUALATEXFLAGS = --halt-on-error
+LUALATEXFLAGS = --halt-on-error -synctex=1
 
 all:
 	lualatex $(LUALATEXFLAGS) $(TARGET)
