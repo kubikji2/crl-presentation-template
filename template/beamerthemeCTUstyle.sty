@@ -3,10 +3,15 @@
 % '-> file structure is based on: 
 %     https://www.lucidchart.com/techblog/2016/12/07/how-to-make-a-presentation-in-latex/
 
+\ProvidesPackage{template/CTUstyle}
+
+% '-> include paths
+\input{template/ctu-paths}
+
 \mode<presentation>
 
-\useinnertheme{CTUstyle}
-\useoutertheme{CTUstyle}
-\usecolortheme{CTUstyle}
+\usepackage{template/beamerinnerthemeCTUstyle}
+\usepackage{template/beamerouterthemeCTUstyle}
+\usepackage{template/beamercolorthemeCTUstyle}
 
 \mode<all>

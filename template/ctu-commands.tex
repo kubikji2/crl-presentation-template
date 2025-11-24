@@ -31,18 +31,20 @@
 \providecommand{\textctu}[1]{{\color{ctu4blue}\normalfont #1}}
 \providecommand{\emphctu}[1]{\emph{\color{ctu4blue} #1}}
 \providecommand{\textctuit}[1]{{\color{ctu4blue}\it #1}}
+\providecommand{\textctutt}[1]{{\color{ctu4blue}\tt #1}}
 % add new command for book citation
-\providecommand{\bibcit}[4]{\parbox{\textwidth}{\tiny \textctubf{#1}: \textit{#2}, \textctunf{#3}, #4}}
-% add new compact citation
+\providecommand{\bibcit}[4]{{\parbox{\textwidth}{\tiny \textctubf{#1}: \textit{#2}, \textctunf{#3}, #4}}}
+% add legacy less compact citation
 % '-> TODO: improve big citation visual
 \providecommand{\bibligraphycitation}[4]{%
-  \scriptsize%
-  \begin{thebibliography}{1c}%
+  {\scriptsize%
+  \begin{thebibliography}{1b}%
     \bibitem[1b]{1b}
     {\textctubf{#1}}%
     \newblock{\it #2}%
     \newblock{\textctu{#3}, \color{black} #4.}%
   \end{thebibliography}
+  }
 }
 
 
