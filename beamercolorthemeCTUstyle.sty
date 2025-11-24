@@ -79,7 +79,11 @@
 %Set Technika font as the main font
 \RequirePackage{fontspec}
 \usefonttheme[onlymath]{serif} %for nice equations
+% setup fonts:
+% see: https://www.overleaf.com/learn/latex/XeLaTeX
 \setsansfont[
+  Path=./fonts/technika/,
+  Extension = .ttf,
   BoldFont={Technika-Regular},
   ItalicFont={Technika-LightItalic},
   BoldItalicFont={Technika-Italic}
